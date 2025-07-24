@@ -4,7 +4,7 @@
 
 #define MAX_NUM 4
 #define CHAR_VAR_NUM 6
-#define ACCUM_CASE_NUM 1000
+#define ACCUM_CASE_NUM 1000000
 
 char formula[201];
 char operatorArr[101];
