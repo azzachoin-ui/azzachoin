@@ -1,23 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define MAX_NUM 4
 #define CHAR_VAR_NUM 6
 #define ACCUM_CASE_NUM 1000000
-
 char formula[201];
-char operatorArr[101];
-
 int numberArr[CHAR_VAR_NUM];
-
 int resultArr[CHAR_VAR_NUM];
 int accumResultArr[ACCUM_CASE_NUM][CHAR_VAR_NUM];
 int accumIdx=0;
-
 int numVarCnt=0;
-
-
 void makeAllCases(int depth)
 {
     if(depth ==numVarCnt )
@@ -59,11 +51,9 @@ int translateAlphaToNum(char k, int* arr)
         return arr[numberArr[5]];
     }
     else{        return 0;}
-
 }
 int main() {
     scanf("%s",formula);
-   // printf("%s \n",formula);
     int length = strlen(formula);
     for(int i=0;i<length;i++)
     {
@@ -99,22 +89,12 @@ int main() {
         {
             numberArr[i] = numVarCnt++;
         }
-    }/*
-    for(int i=0;i<CHAR_VAR_NUM;i++)
-    {
-        printf("%d \n",numberArr[i]);
-    }*/
+    }
      makeAllCases(0);
      int maxRslt=-0xfffffff;
      for(int i=0;   i<accumIdx;     i++)
-     //for(int i=accumIdx-2;   i<accumIdx-1;     i++)
-     {/*
-        for(int j=0;j<CHAR_VAR_NUM;j++)
-        {
-            printf("accumResultArr[%d][%d] %d \n",i,j,accumResultArr[i][j]);
-        }*/
+     {
         int tempCalcRslt= translateAlphaToNum(formula[0], accumResultArr[i]);
-        //printf("i:%d, tempCalcRslt:%d \n",i, tempCalcRslt);
         for(int j=0;j<(length/2); j++)
         {
             if(formula[j*2+1]=='+')
@@ -130,18 +110,12 @@ int main() {
                 tempCalcRslt =  tempCalcRslt * translateAlphaToNum(formula[(j+1)*2], accumResultArr[i]);
             }
             else{}
-            
-            //printf("j:%d, tempCalcRslt:%d \n",j, tempCalcRslt);
         }
         if(maxRslt < tempCalcRslt)
         {
             maxRslt = tempCalcRslt;
         }
      }
-
     printf("%d",maxRslt);
-
-
-
     return 0;
 }
