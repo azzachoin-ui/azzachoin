@@ -31,16 +31,7 @@ int main() {
             continue;
         }
     }
-    /*
-        printf("maxval : %d \n",MAX_VAL);
-    for(int i=0;i<n;i++)
-    {
-        printf("%d", dp[i] );
-    }*/
-    if(dp[n-1] == MAX_VAL )
-    {
-        printf("-1");
-    }
+    if(dp[n-1] == MAX_VAL ) printf("-1");
     else printf("%d", dp[n-1] );
     return 0;
 }
