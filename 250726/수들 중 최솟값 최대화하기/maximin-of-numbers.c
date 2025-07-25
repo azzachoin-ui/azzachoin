@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX_N 10
-#define MAX_CASE 100000
+#define MAX_CASE 10000000
 #define MAX_VAL 0xfffffff
 
 int n;
