@@ -55,9 +55,9 @@ int main() {
         }
         int tempMaxVal=0;
         int tempVal=0;
-        for(int k=0;    k<idxThisCase; k++) //idxThisCase대신 m도 가능함
+        for(int k=0;    k<m; k++) //idxThisCase대신 m도 가능함
         {
-            for(int l=k;    l<idxThisCase; l++) //idxThisCase대신 m도 가능함
+            for(int l=k;    l<m; l++) //idxThisCase대신 m도 가능함
             {
                 tempVal = (selectedPoints[k][0]-selectedPoints[l][0]) * (selectedPoints[k][0]-selectedPoints[l][0]) + (selectedPoints[k][1]-selectedPoints[l][1]) * (selectedPoints[k][1]-selectedPoints[l][1]);
                 if(tempMaxVal < tempVal) tempMaxVal = tempVal;
